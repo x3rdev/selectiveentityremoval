@@ -5,7 +5,8 @@
   "mixins": [
   ],
   "client": [
-    "ExampleMixin"
+    "ExampleMixin",
+    "DeleteEntity"
   ],
   "injectors": {
     "defaultRequire": 1

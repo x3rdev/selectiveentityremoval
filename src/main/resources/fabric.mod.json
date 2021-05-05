@@ -2,39 +2,32 @@
   "schemaVersion": 1,
   "id": "selectiveentityremoval",
   "version": "0.0.1",
-
   "name": "Selective Entity Removal",
   "description": "description",
   "authors": [
     "x3rmination"
   ],
-
   "license": "CC0-1.0",
   "icon": "assets/selectiveentityremoval/icon.png",
-
   "environment": "client",
   "entrypoints": {
-    "client": [
+    "main": [
       "github.x3rmination.selectiveentityremoval.SelectiveEntityRemoval"
     ]
   },
   "mixins": [
     "selectiveentityremoval.mixins.json"
   ],
-
   "depends": {
     "fabricloader": ">=0.7.4",
-    "fabric": "*",
     "minecraft": "1.16.x"
   },
   "suggests": {
     "another-mod": "modmenu"
   },
-
   "custom": {
     "modmenu": {
       "links": {
-
       },
       "parent": {
         "id": "selectiveentityremoval",
@@ -44,5 +37,4 @@
       }
     }
   }
-
 }

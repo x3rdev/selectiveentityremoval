@@ -9,6 +9,8 @@ import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.mob.ZombieEntity;
+
+import net.minecraft.entity.passive.PigEntity;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -19,18 +21,25 @@ public class DeleteEntity {
     @Inject(at = @At("HEAD"), method = "renderEntity", cancellable = true)
     private void renderEntity(Entity entity, double cameraX, double cameraY, double cameraZ, float tickDelta,
                               MatrixStack matrices, VertexConsumerProvider vertexConsumers, CallbackInfo callbackInfo) {
-        Cullable cullable = (Cullable) entity;
-        if (cullable.isForcedVisible()) {
-            return;
-        }
 
+//        System.out.println("ZZZZZZZZZZZZZZZ: Printing entity: "+entity.getType());
 
-
-        if (cullable.isCulled()) {
-            if (entity instanceof ZombieEntity) {
-                callbackInfo.cancel();
-            }
+        if(entity.getType().toString().endsWith("pig")){
+            callbackInfo.cancel();
 
         }
+        //        Cullable cullable = (Cullable) entity;
+//        if (cullable.isForcedVisible()) {
+//            return;
+//        }
+//
+//
+//
+//        if (cullable.isCulled()) {
+//            if (entity instanceof ZombieEntity) {
+//                callbackInfo.cancel();
+//            }
+//
+//        }
     }
 }

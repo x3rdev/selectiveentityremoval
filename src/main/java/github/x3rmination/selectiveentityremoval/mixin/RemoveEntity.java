@@ -17,12 +17,13 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import java.awt.*;
+import java.util.Map;
 
 
 @Mixin(WorldRenderer.class)
 public class RemoveEntity {
 
-    private final int range = SelectiveEntityRemoval.instance.config.range;
+//    private final int range = SelectiveEntityRemoval.instance.config.range;
 
     public double calculateCoordinateDifference(PlayerEntity player, Entity entity) {
 
@@ -35,14 +36,17 @@ public class RemoveEntity {
         double entityYcoord = entity.getY();
         double entityZcoord = entity.getZ();
 
-        double distance = Math.round((Math.sqrt(
-                Math.pow((playerXcoord-entityXcoord), 2)
-                +Math.pow((playerYcoord-entityYcoord), 2)
-                +Math.pow((playerZcoord-entityZcoord), 2)))*10000.0)/10000.0;
+        double distance = Math.round((Math.sqrt(Math.pow((playerXcoord-entityXcoord), 2) +Math.pow((playerYcoord-entityYcoord), 2) +Math.pow((playerZcoord-entityZcoord), 2)))*10000.0)/10000.0;
 
         return distance;
 
     }
+
+//    public string isEnabled(Entity entity, Config config){
+//
+//    }
+
+
     @Inject(at = @At("HEAD"), method = "renderEntity", cancellable = true)
     private void renderEntity(Entity entity, double cameraX, double cameraY, double cameraZ, float tickDelta,
                               MatrixStack matrices, VertexConsumerProvider vertexConsumers, CallbackInfo callbackInfo) {
@@ -50,11 +54,25 @@ public class RemoveEntity {
         ClientPlayerEntity player = MinecraftClient.getInstance().player;
         assert player != null;
 
+        String targetEntity = (entity.getType().toString()).replace("entity.minecraft.", "");
 
-        if (entity.getType().toString().endsWith("item_frame")) {
-            if (calculateCoordinateDifference(player, entity) > range) {
+        if(SelectiveEntityRemoval.config.entities.get(targetEntity)!= null){
+            Map<String, Object> targetEntityProperties = SelectiveEntityRemoval.config.entities.get(targetEntity);
+
+            double range = (Double)targetEntityProperties.get("range");
+            boolean isEnabled = Boolean.parseBoolean((String)targetEntityProperties.get("enabled"));
+            if (isEnabled) {
+
+                if (calculateCoordinateDifference(player, entity) > range) {
+
+                    callbackInfo.cancel();
+                }
+            }
+
+            if (!isEnabled) {
                 callbackInfo.cancel();
             }
         }
+
     }
 }

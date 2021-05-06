@@ -22,17 +22,16 @@ public class SelectiveEntityRemoval implements ModInitializer {
 	private Thread cullThread;
 	public Set<BlockEntityType<?>> unCullable = new HashSet<>();
 
-	public Config config;
+	public static Config config;
 	private final File settingsFile = new File("config", "selectiveentityremoval.json");
-	private final Gson gson = new GsonBuilder().setPrettyPrinting().create();
+	private final Gson gson = new GsonBuilder().setPrettyPrinting().excludeFieldsWithoutExposeAnnotation().create();
 
 	@Override
 	public void onInitialize() {
 		instance = this;
 		if (settingsFile.exists()) {
 			try {
-				config = gson.fromJson(new String(Files.readAllBytes(settingsFile.toPath()), StandardCharsets.UTF_8),
-						Config.class);
+				config = gson.fromJson(new String(Files.readAllBytes(settingsFile.toPath()), StandardCharsets.UTF_8), Config.class);
 			} catch (Exception ex) {
 				System.out.println("Error while loading config! Creating a new one!");
 				ex.printStackTrace();
@@ -40,12 +39,15 @@ public class SelectiveEntityRemoval implements ModInitializer {
 		}
 		if (config == null) {
 			config = new Config();
-			writeConfig();
+			createConfig();
 		}
 	}
-	public void writeConfig() {
-		if (settingsFile.exists())
+
+	public void createConfig() {
+		if (settingsFile.exists()){
 			settingsFile.delete();
+		}
+
 		try {
 			Files.write(settingsFile.toPath(), gson.toJson(config).getBytes(StandardCharsets.UTF_8));
 		} catch (IOException e1) {

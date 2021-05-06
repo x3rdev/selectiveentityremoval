@@ -1,5 +1,7 @@
 package github.x3rmination.selectiveentityremoval.mixin;
 
+import github.x3rmination.selectiveentityremoval.Config;
+import github.x3rmination.selectiveentityremoval.SelectiveEntityRemoval;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.client.render.VertexConsumerProvider;
@@ -20,30 +22,39 @@ import java.awt.*;
 @Mixin(WorldRenderer.class)
 public class RemoveEntity {
 
+    private final int range = SelectiveEntityRemoval.instance.config.range;
 
+    public double calculateCoordinateDifference(PlayerEntity player, Entity entity) {
 
-    @Inject(at = @At("HEAD"), method = "renderEntity", cancellable = true)
-    private void renderEntity(Entity entity, double cameraX, double cameraY, double cameraZ, float tickDelta,
-                              MatrixStack matrices, VertexConsumerProvider vertexConsumers, CallbackInfo callbackInfo) {
-        System.out.println("3456785rt62de3rwtwefrdiewtydfjytsafjdgasfdjs");
-        ClientPlayerEntity player = MinecraftClient.getInstance().player;
-        assert player != null;
-        calculateCoordinateDifference(player);
-
-        if(entity.getType().toString().endsWith("pig")){
-            callbackInfo.cancel();
-        }
-    }
-    public void calculateCoordinateDifference(PlayerEntity player) {
-        System.out.println("wwww 3456785rt62de3rwtwefrdiewtydfjytsafjdgasfdjs");
-
+        //player
         double playerXcoord = player.getX();
         double playerYcoord = player.getY();
         double playerZcoord = player.getZ();
-        System.out.println("X="+playerXcoord);
-        System.out.println("Y="+playerYcoord);
-        System.out.println("Z="+playerZcoord);
+        //entity
+        double entityXcoord = entity.getX();
+        double entityYcoord = entity.getY();
+        double entityZcoord = entity.getZ();
+
+        double distance = Math.round((Math.sqrt(
+                Math.pow((playerXcoord-entityXcoord), 2)
+                +Math.pow((playerYcoord-entityYcoord), 2)
+                +Math.pow((playerZcoord-entityZcoord), 2)))*10000.0)/10000.0;
+
+        return distance;
 
     }
+    @Inject(at = @At("HEAD"), method = "renderEntity", cancellable = true)
+    private void renderEntity(Entity entity, double cameraX, double cameraY, double cameraZ, float tickDelta,
+                              MatrixStack matrices, VertexConsumerProvider vertexConsumers, CallbackInfo callbackInfo) {
 
+        ClientPlayerEntity player = MinecraftClient.getInstance().player;
+        assert player != null;
+
+
+        if (entity.getType().toString().endsWith("item_frame")) {
+            if (calculateCoordinateDifference(player, entity) > range) {
+                callbackInfo.cancel();
+            }
+        }
+    }
 }

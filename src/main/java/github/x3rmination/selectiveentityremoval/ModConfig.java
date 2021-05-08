@@ -1,32 +1,17 @@
 package github.x3rmination.selectiveentityremoval;
 
 import com.google.gson.annotations.Expose;
-import me.shedaniel.clothconfig2.api.ConfigBuilder;
-import me.shedaniel.clothconfig2.api.ConfigCategory;
-import me.shedaniel.clothconfig2.api.ConfigEntryBuilder;
-import net.minecraft.text.TranslatableText;
+import me.shedaniel.autoconfig.AutoConfig;
+import net.minecraft.client.gui.screen.Screen;
 
-
-import java.util.*;
-
-
+import java.util.HashMap;
+import java.util.Map;
+import java.util.function.Supplier;
 
 
 public class ModConfig {
 
     public static String testValue = "test";
-
-    ConfigBuilder builder = ConfigBuilder.create()
-            .setParentScreen(SelectiveEntityRemoval.parentScreen)
-            .setTitle(new TranslatableText("title.selectiveentityremoval.config"));
-
-
-
-    ConfigCategory general = builder.getOrCreateCategory(new TranslatableText("category.selectiveentityremoval.general"));
-
-    ConfigEntryBuilder entryBuilder = builder.entryBuilder();
-
-
 
 
     @Expose()
@@ -41,11 +26,11 @@ public class ModConfig {
 
             entities.put(entity, properties);
         }
-        general.addEntry(entryBuilder.startStrField(new TranslatableText("option.selectiveentityremoval.optionA"), testValue)
-                .setDefaultValue("This is the default value")
-                .setTooltip(new TranslatableText("This option is awesome!"))
-                .setSaveConsumer(newValue -> testValue  = newValue)
-                .build());
+//        general.addEntry(entryBuilder.startStrField(new TranslatableText("option.selectiveentityremoval.optionA"), testValue)
+//                .setDefaultValue("This is the default value")
+//                .setTooltip(new TranslatableText("This option is awesome!"))
+//                .setSaveConsumer(newValue -> testValue  = newValue)
+//                .build());
     }
 
 

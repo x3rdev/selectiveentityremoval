@@ -13,15 +13,11 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-
-import java.awt.*;
 import java.util.Map;
 
 
 @Mixin(WorldRenderer.class)
 public class RemoveEntity {
-
-//    private final int range = SelectiveEntityRemoval.instance.config.range;
 
     public double calculateCoordinateDifference(PlayerEntity player, Entity entity) {
 
@@ -40,9 +36,7 @@ public class RemoveEntity {
 
     }
 
-//    public string isEnabled(Entity entity, Config config){
-//
-//    }
+
 
 
     @Inject(at = @At("HEAD"), method = "renderEntity", cancellable = true)

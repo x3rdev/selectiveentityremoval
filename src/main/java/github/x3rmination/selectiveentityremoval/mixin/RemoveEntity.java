@@ -1,6 +1,6 @@
 package github.x3rmination.selectiveentityremoval.mixin;
 
-import github.x3rmination.selectiveentityremoval.SelectiveEntityRemoval;
+import github.x3rmination.selectiveentityremoval.ModConfigManager;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.client.render.VertexConsumerProvider;
@@ -48,23 +48,23 @@ public class RemoveEntity {
 
         String targetEntity = (entity.getType().toString()).replace("entity.minecraft.", "");
 
-        if(SelectiveEntityRemoval.modconfig.entities.get(targetEntity)!= null){
-            Map<String, Object> targetEntityProperties = SelectiveEntityRemoval.modconfig.entities.get(targetEntity);
-
-            double range = (Double)targetEntityProperties.get("range");
-            boolean isEnabled = Boolean.parseBoolean((String)targetEntityProperties.get("enabled"));
-            if (isEnabled) {
-
-                if (calculateCoordinateDifference(player, entity) > range) {
-
-                    callbackInfo.cancel();
-                }
-            }
-
-            if (!isEnabled) {
-                callbackInfo.cancel();
-            }
-        }
+//        if(ModConfigManager.modconfig.entities.get(targetEntity)!= null){
+//            Map<String, Object> targetEntityProperties = ModConfigManager.modconfig.entities.get(targetEntity);
+//
+//            double range = (Double)targetEntityProperties.get("range");
+//            boolean isEnabled = Boolean.parseBoolean((String)targetEntityProperties.get("enabled"));
+//            if (isEnabled) {
+//
+//                if (calculateCoordinateDifference(player, entity) > range) {
+//
+//                    callbackInfo.cancel();
+//                }
+//            }
+//
+//            if (!isEnabled) {
+//                callbackInfo.cancel();
+//            }
+//        }
 
     }
 }

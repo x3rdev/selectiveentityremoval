@@ -1,37 +1,34 @@
 package github.x3rmination.selectiveentityremoval;
 
 import com.google.gson.annotations.Expose;
-import me.shedaniel.autoconfig.AutoConfig;
-import net.minecraft.client.gui.screen.Screen;
-
+import me.shedaniel.autoconfig.ConfigData;
+import me.shedaniel.autoconfig.annotation.Config;
+import me.shedaniel.autoconfig.annotation.ConfigEntry;
+import me.shedaniel.autoconfig.serializer.PartitioningSerializer;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Supplier;
 
 
-public class ModConfig {
+@Config(name = "selectiveentityremoval")
+public class ModConfig extends PartitioningSerializer.GlobalData {
 
-    public static String testValue = "test";
 
 
-    @Expose()
-    public Map<String,Map<String,Object>> entities = new HashMap<>();
+    @ConfigEntry.Category("nbt_general")
+    @ConfigEntry.Gui.TransitiveObject
+    GeneralConfig general = new GeneralConfig();
 
-    public ModConfig() {
-        for(String entity: EntitiesList.minecraftEntitiesList){
 
-            Map<String, Object> properties = new HashMap<>();
-            properties.put("enabled", "true");
-            properties.put("range", 60.0);
+    @Config(name = "nbt_general")
+    public static class GeneralConfig implements ConfigData {
 
-            entities.put(entity, properties);
-        }
-//        general.addEntry(entryBuilder.startStrField(new TranslatableText("option.selectiveentityremoval.optionA"), testValue)
-//                .setDefaultValue("This is the default value")
-//                .setTooltip(new TranslatableText("This option is awesome!"))
-//                .setSaveConsumer(newValue -> testValue  = newValue)
-//                .build());
+        boolean enableTooltips = true;
+
+
+        boolean modisworking = false;
     }
+
+
 
 
 

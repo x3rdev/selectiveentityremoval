@@ -35,7 +35,9 @@ public class ModConfigManager {
     }
 
     public static void loadConfig() {
+
         modconfig = AutoConfig.getConfigHolder(ModConfig.class).getConfig();
+
     }
 
     public static Supplier<Screen> getConfigScreen(Screen parent) {
@@ -71,18 +73,4 @@ public class ModConfigManager {
         }
     }
 
-//    @Expose()
-//    public Map<String, Map<String,Object>> entities = new HashMap<>();
-
-    //    public ModConfig() {
-//        for(String entity: EntitiesList.minecraftEntitiesList){
-//
-//            Map<String, Object> properties = new HashMap<>();
-//            properties.put("enabled", "true");
-//            properties.put("range", 60.0);
-//
-//            entities.put(entity, properties);
-//        }
-//
-//    }
 }

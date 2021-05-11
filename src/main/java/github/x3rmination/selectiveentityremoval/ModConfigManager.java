@@ -31,6 +31,7 @@ public class ModConfigManager {
         AutoConfig.register(
                 ModConfig.class,
                 PartitioningSerializer.wrap(GsonConfigSerializer::new)
+
         );
     }
 

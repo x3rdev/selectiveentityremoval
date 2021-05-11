@@ -40,15 +40,4 @@ public class ConfigProvider {
         field.setAccessible(true);
         return (ModConfig.GeneralConfig.ConfEntity) field.get(genConf);
     }
-
-    public static void main(String[] args)  {
-
-        ModConfig cfg = new ModConfig();
-
-        ConfigProvider cfgprovider = new ConfigProvider(cfg);
-
-
-        System.out.println(cfgprovider.getEnabledFor("bat"));
-        System.out.println(cfgprovider.getRangeFor("bat"));
-    }
 }

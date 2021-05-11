@@ -29,7 +29,7 @@ public class ModConfig extends PartitioningSerializer.GlobalData {
         ConfEntity area_affect_cloud = new ConfEntity(true, 60);
 
         @ConfigEntry.Gui.CollapsibleObject
-        public ConfEntity armor_stand = new ConfEntity(true, 60);
+        ConfEntity armor_stand = new ConfEntity(true, 60);
 
         @ConfigEntry.Gui.CollapsibleObject
         ConfEntity arrow = new ConfEntity(true, 60);
@@ -65,7 +65,7 @@ public class ModConfig extends PartitioningSerializer.GlobalData {
         ConfEntity cod = new ConfEntity(true, 60);
 
         @ConfigEntry.Gui.CollapsibleObject
-        ConfEntity commandblock_minecart= new ConfEntity(true, 60);
+        ConfEntity command_block_minecart= new ConfEntity(true, 60);
 
         @ConfigEntry.Gui.CollapsibleObject
         ConfEntity cow = new ConfEntity(true, 60);
@@ -92,16 +92,16 @@ public class ModConfig extends PartitioningSerializer.GlobalData {
         ConfEntity elder_guardian = new ConfEntity(true, 60);
 
         @ConfigEntry.Gui.CollapsibleObject
-        ConfEntity endcrystal = new ConfEntity(true, 60);
+        ConfEntity end_crystal = new ConfEntity(true, 60);
 
         @ConfigEntry.Gui.CollapsibleObject
-        ConfEntity enderdragon = new ConfEntity(true, 60);
+        ConfEntity ender_dragon = new ConfEntity(true, 60);
 
         @ConfigEntry.Gui.CollapsibleObject
-        ConfEntity enderdragonpart = new ConfEntity(true, 60);
+        ConfEntity ender_dragonpart = new ConfEntity(true, 60);
 
         @ConfigEntry.Gui.CollapsibleObject
-        ConfEntity enderpearl = new ConfEntity(true, 60);
+        ConfEntity ender_pearl = new ConfEntity(true, 60);
 
         @ConfigEntry.Gui.CollapsibleObject
         ConfEntity enderman = new ConfEntity(true, 60);
@@ -113,34 +113,34 @@ public class ModConfig extends PartitioningSerializer.GlobalData {
         ConfEntity evoker = new ConfEntity(true, 60);
 
         @ConfigEntry.Gui.CollapsibleObject
-        ConfEntity evokerfangs = new ConfEntity(true, 60);
+        ConfEntity evoker_fangs = new ConfEntity(true, 60);
 
         @ConfigEntry.Gui.CollapsibleObject
-        ConfEntity experiencebottle = new ConfEntity(true, 60);
+        ConfEntity experience_bottle = new ConfEntity(true, 60);
 
         @ConfigEntry.Gui.CollapsibleObject
-        ConfEntity experienceorb = new ConfEntity(true, 60);
+        ConfEntity experience_orb = new ConfEntity(true, 60);
 
         @ConfigEntry.Gui.CollapsibleObject
-        ConfEntity eyeofender = new ConfEntity(true, 60);
+        ConfEntity eye_of_ender = new ConfEntity(true, 60);
 
         @ConfigEntry.Gui.CollapsibleObject
-        ConfEntity fallingblock = new ConfEntity(true, 60);
+        ConfEntity falling_block = new ConfEntity(true, 60);
 
         @ConfigEntry.Gui.CollapsibleObject
         ConfEntity fireball = new ConfEntity(true, 60);
 
         @ConfigEntry.Gui.CollapsibleObject
-        ConfEntity fireworkrocket = new ConfEntity(true, 60);
+        ConfEntity firework_rocket = new ConfEntity(true, 60);
 
         @ConfigEntry.Gui.CollapsibleObject
-        ConfEntity fishingbobber = new ConfEntity(true, 60);
+        ConfEntity fishing_bobber = new ConfEntity(true, 60);
 
         @ConfigEntry.Gui.CollapsibleObject
         ConfEntity fox = new ConfEntity(true, 60);
 
         @ConfigEntry.Gui.CollapsibleObject
-        ConfEntity furnaceminecart = new ConfEntity(true, 60);
+        ConfEntity furnace_minecart = new ConfEntity(true, 60);
 
         @ConfigEntry.Gui.CollapsibleObject
         ConfEntity ghast = new ConfEntity(true, 60);
@@ -155,7 +155,7 @@ public class ModConfig extends PartitioningSerializer.GlobalData {
         ConfEntity hoglin = new ConfEntity(true, 60);
 
         @ConfigEntry.Gui.CollapsibleObject
-        ConfEntity hopperminecart = new ConfEntity(true, 60);
+        ConfEntity hopper_minecart = new ConfEntity(true, 60);
 
         @ConfigEntry.Gui.CollapsibleObject
         ConfEntity horse = new ConfEntity(true, 60);
@@ -167,16 +167,16 @@ public class ModConfig extends PartitioningSerializer.GlobalData {
         ConfEntity illusioner = new ConfEntity(true, 60);
 
         @ConfigEntry.Gui.CollapsibleObject
-        ConfEntity irongolem = new ConfEntity(true, 60);
+        ConfEntity iron_golem = new ConfEntity(true, 60);
 
         @ConfigEntry.Gui.CollapsibleObject
         ConfEntity item = new ConfEntity(true, 60);
 
         @ConfigEntry.Gui.CollapsibleObject
-        ConfEntity itemframe = new ConfEntity(true, 60);
+        ConfEntity item_frame = new ConfEntity(true, 60);
 
         @ConfigEntry.Gui.CollapsibleObject
-        ConfEntity leashknot = new ConfEntity(true, 60);
+        ConfEntity leash_knot = new ConfEntity(true, 60);
 
         @ConfigEntry.Gui.CollapsibleObject
         ConfEntity lightning = new ConfEntity(true, 100);
@@ -185,7 +185,7 @@ public class ModConfig extends PartitioningSerializer.GlobalData {
         ConfEntity llama = new ConfEntity(true, 60);
 
         @ConfigEntry.Gui.CollapsibleObject
-        ConfEntity llamaspit = new ConfEntity(true, 60);
+        ConfEntity llama_spit = new ConfEntity(true, 60);
 
         @ConfigEntry.Gui.CollapsibleObject
         ConfEntity magma_cube = new ConfEntity(true, 60);
@@ -203,7 +203,7 @@ public class ModConfig extends PartitioningSerializer.GlobalData {
         ConfEntity ocelot = new ConfEntity(true, 60);
 
         @ConfigEntry.Gui.CollapsibleObject
-        ConfEntity otherclientplayer = new ConfEntity(true, 60);
+        ConfEntity other_client_player = new ConfEntity(true, 60);
 
         @ConfigEntry.Gui.CollapsibleObject
         ConfEntity painting = new ConfEntity(true, 60);
@@ -224,19 +224,19 @@ public class ModConfig extends PartitioningSerializer.GlobalData {
         ConfEntity piglin = new ConfEntity(true, 60);
 
         @ConfigEntry.Gui.CollapsibleObject
-        ConfEntity piglinbrute = new ConfEntity(true, 60);
+        ConfEntity piglin_brute = new ConfEntity(true, 60);
 
         @ConfigEntry.Gui.CollapsibleObject
         ConfEntity pillager = new ConfEntity(true, 60);
 
         @ConfigEntry.Gui.CollapsibleObject
-        ConfEntity polarbear = new ConfEntity(true, 60);
+        ConfEntity polar_bear = new ConfEntity(true, 60);
 
         @ConfigEntry.Gui.CollapsibleObject
         ConfEntity potion = new ConfEntity(true, 60);
 
         @ConfigEntry.Gui.CollapsibleObject
-        ConfEntity pufferfish = new ConfEntity(true, 60);
+        ConfEntity puffer_fish = new ConfEntity(true, 60);
 
         @ConfigEntry.Gui.CollapsibleObject
         ConfEntity rabbit = new ConfEntity(true, 60);
@@ -248,7 +248,7 @@ public class ModConfig extends PartitioningSerializer.GlobalData {
         ConfEntity salmon = new ConfEntity(true, 60);
 
         @ConfigEntry.Gui.CollapsibleObject
-        ConfEntity serverplayer = new ConfEntity(true, 60);
+        ConfEntity server_player = new ConfEntity(true, 60);
 
         @ConfigEntry.Gui.CollapsibleObject
         ConfEntity sheep = new ConfEntity(true, 60);
@@ -257,7 +257,7 @@ public class ModConfig extends PartitioningSerializer.GlobalData {
         ConfEntity shulker = new ConfEntity(true, 60);
 
         @ConfigEntry.Gui.CollapsibleObject
-        ConfEntity shulkerbullet = new ConfEntity(true, 60);
+        ConfEntity shulker_bullet = new ConfEntity(true, 60);
 
         @ConfigEntry.Gui.CollapsibleObject
         ConfEntity silverfish = new ConfEntity(true, 60);
@@ -266,16 +266,16 @@ public class ModConfig extends PartitioningSerializer.GlobalData {
         ConfEntity skeleton = new ConfEntity(true, 60);
 
         @ConfigEntry.Gui.CollapsibleObject
-        ConfEntity skeletonhorse = new ConfEntity(true, 60);
+        ConfEntity skeleton_horse = new ConfEntity(true, 60);
 
         @ConfigEntry.Gui.CollapsibleObject
         ConfEntity slime = new ConfEntity(true, 60);
 
         @ConfigEntry.Gui.CollapsibleObject
-        ConfEntity smallfireball = new ConfEntity(true, 60);
+        ConfEntity small_fireball = new ConfEntity(true, 60);
 
         @ConfigEntry.Gui.CollapsibleObject
-        ConfEntity snowgolem = new ConfEntity(true, 60);
+        ConfEntity snow_golem = new ConfEntity(true, 60);
 
         @ConfigEntry.Gui.CollapsibleObject
         ConfEntity snowball = new ConfEntity(true, 60);

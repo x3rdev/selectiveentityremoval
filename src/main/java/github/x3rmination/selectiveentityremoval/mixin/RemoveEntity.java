@@ -55,9 +55,10 @@ public class RemoveEntity {
 
         System.out.println("targetEntity " + configProvider.getRangeFor(targetEntity));
 
-
-        boolean isEnabled = configProvider.getEnabledFor(targetEntity);
-        if (isEnabled) {
+        //isEnabled changed to isVisible for clarity, if the entity is Disabled it will never be visible,
+        //if entity is Enabled it will be visible as long as it is within range
+        boolean isVisible = configProvider.getEnabledFor(targetEntity);
+        if (isVisible) {
             double range = configProvider.getRangeFor(targetEntity);
 
             if (calculateCoordinateDifference(player, entity) > range) {
@@ -67,7 +68,7 @@ public class RemoveEntity {
 
         }
 
-        if (!isEnabled) {
+        if (!isVisible) {
             callbackInfo.cancel();
         }
     }

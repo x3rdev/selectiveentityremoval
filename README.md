@@ -7,9 +7,10 @@ Selective Entity Removal is currently for Fabric 1.16.4+ and will be updated in 
 ## Dependencies
 
 This mod requires:
-    Cloth Config Fabric --- Version: 4.11.19+
-        Download available at: https://www.curseforge.com/minecraft/mc-mods/cloth-config
-    Mod Menu --- Version: 1.16.9+ 
-        Download available at: https://www.curseforge.com/minecraft/mc-mods/modmenu
+
+*Cloth Config Fabric --- Version: 4.11.19+
+**Download available at: https://www.curseforge.com/minecraft/mc-mods/cloth-config
+*Mod Menu --- Version: 1.16.9+ 
+**Download available at: https://www.curseforge.com/minecraft/mc-mods/modmenu
 
 This mod is not perfect so if you encounter any issues please report them on this page.

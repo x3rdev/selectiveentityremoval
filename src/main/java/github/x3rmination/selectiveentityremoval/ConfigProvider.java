@@ -12,7 +12,7 @@ public class ConfigProvider {
 
     public Boolean getEnabledFor(String entityid) {
 
-        ModConfig.GeneralConfig.ConfEntity entity = null;
+        ModConfig.GeneralConfig.ConfEntity entity;
         try {
             entity = getConfEntity(entityid);
         } catch (NoSuchFieldException | IllegalAccessException e) {
@@ -23,7 +23,7 @@ public class ConfigProvider {
 
     public double getRangeFor(String entityid) {
 
-        ModConfig.GeneralConfig.ConfEntity entity = null;
+        ModConfig.GeneralConfig.ConfEntity entity;
         try {
             entity = getConfEntity(entityid);
         } catch (NoSuchFieldException | IllegalAccessException e) {

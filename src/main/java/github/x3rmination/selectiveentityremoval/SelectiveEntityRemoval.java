@@ -10,13 +10,7 @@ public class SelectiveEntityRemoval implements ModInitializer {
 	public void onInitialize() {
 		ModConfigManager.registerConfig();
 		ModConfigManager.loadConfig();
-		ModConfigManager.checkConfig();
-		ModConfigManager.createConfig();
 	}
-
-
-
-
 
 
 }

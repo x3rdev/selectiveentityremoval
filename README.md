@@ -1,9 +1,13 @@
-# Fabric Example Mod
+# Selective Entity Removal
 
-## Setup
+This mod allows the user to disable specific mobs from rendering and set the range at which they are visible.
 
-For setup instructions please see the [fabric wiki page](https://fabricmc.net/wiki/tutorial:setup) that relates to the IDE that you are using.
+Selective Entity Removal is currently for Fabric 1.16.4+ and will be updated in the future.
 
-## License
+## Dependencies
 
-This template is available under the CC0 license. Feel free to learn from it and incorporate it in your own projects.
+This mod requires:
+    Cloth Config Fabric --- Version: 4.11.19+ --- https://www.curseforge.com/minecraft/mc-mods/cloth-config
+    Mod Menu --- Version: 1.16.9+ --- https://www.curseforge.com/minecraft/mc-mods/modmenu
+
+This mod is not perfect so if you encounter any issues please report them on this page.

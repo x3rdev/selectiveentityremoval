@@ -2,7 +2,6 @@ package github.x3rmination.selectiveentityremoval.mixin;
 
 import github.x3rmination.selectiveentityremoval.ConfigProvider;
 import github.x3rmination.selectiveentityremoval.ModConfig;
-import github.x3rmination.selectiveentityremoval.ModConfigManager;
 import me.shedaniel.autoconfig.AutoConfig;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.ClientPlayerEntity;
@@ -10,16 +9,12 @@ import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.render.WorldRenderer;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.mob.MagmaCubeEntity;
 import net.minecraft.entity.player.PlayerEntity;
 
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-
-import java.util.Map;
-
 
 @Mixin(WorldRenderer.class)
 public class RemoveEntity {
@@ -53,10 +48,12 @@ public class RemoveEntity {
 
         String targetEntity = (entity.getType().toString()).replace("entity.minecraft.", "");
 
-        System.out.println("targetEntity " + configProvider.getRangeFor(targetEntity));
 
         //isEnabled changed to isVisible for clarity, if the entity is Disabled it will never be visible,
         //if entity is Enabled it will be visible as long as it is within range
+
+        System.out.println("entity " + targetEntity);
+
         boolean isVisible = configProvider.getEnabledFor(targetEntity);
         if (isVisible) {
             double range = configProvider.getRangeFor(targetEntity);

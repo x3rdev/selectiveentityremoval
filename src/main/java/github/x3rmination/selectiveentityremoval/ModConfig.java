@@ -59,9 +59,6 @@ public class ModConfig extends PartitioningSerializer.GlobalData {
         ConfEntity chicken = new ConfEntity(true, 60);
 
         @ConfigEntry.Gui.CollapsibleObject
-        ConfEntity client_player = new ConfEntity(true, 60);
-
-        @ConfigEntry.Gui.CollapsibleObject
         ConfEntity cod = new ConfEntity(true, 60);
 
         @ConfigEntry.Gui.CollapsibleObject
@@ -203,9 +200,6 @@ public class ModConfig extends PartitioningSerializer.GlobalData {
         ConfEntity ocelot = new ConfEntity(true, 60);
 
         @ConfigEntry.Gui.CollapsibleObject
-        ConfEntity other_client_player = new ConfEntity(true, 60);
-
-        @ConfigEntry.Gui.CollapsibleObject
         ConfEntity painting = new ConfEntity(true, 60);
 
         @ConfigEntry.Gui.CollapsibleObject
@@ -230,6 +224,9 @@ public class ModConfig extends PartitioningSerializer.GlobalData {
         ConfEntity pillager = new ConfEntity(true, 60);
 
         @ConfigEntry.Gui.CollapsibleObject
+        ConfEntity player = new ConfEntity(true, 60);
+
+        @ConfigEntry.Gui.CollapsibleObject
         ConfEntity polar_bear = new ConfEntity(true, 60);
 
         @ConfigEntry.Gui.CollapsibleObject
@@ -246,9 +243,6 @@ public class ModConfig extends PartitioningSerializer.GlobalData {
 
         @ConfigEntry.Gui.CollapsibleObject
         ConfEntity salmon = new ConfEntity(true, 60);
-
-        @ConfigEntry.Gui.CollapsibleObject
-        ConfEntity server_player = new ConfEntity(true, 60);
 
         @ConfigEntry.Gui.CollapsibleObject
         ConfEntity sheep = new ConfEntity(true, 60);

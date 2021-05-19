@@ -1,4 +1,5 @@
 {
+  "text.autoconfig.selectiveentityremoval.title": "Selective Entity Removal",
   "text.autoconfig.selectiveentityremoval.option.general.area_affect_cloud": "area_affect_cloud",
   "text.autoconfig.selectiveentityremoval.option.general.armor_stand": "armor_stand",
   "text.autoconfig.selectiveentityremoval.option.general.arrow": "arrow",

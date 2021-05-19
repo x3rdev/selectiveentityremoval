@@ -4,6 +4,8 @@ This mod allows the user to disable specific mobs from rendering and set the ran
 
 Selective Entity Removal is currently for Fabric 1.16.4+ and will be updated in the future.
 
+This mod is not perfect so if you encounter any issues please report them on this page.
+
 ## Dependencies
 
 This mod requires:
@@ -13,4 +15,3 @@ This mod requires:
     * Download available at: https://www.curseforge.com/minecraft/mc-mods/modmenu
     
 
-This mod is not perfect so if you encounter any issues please report them on this page.

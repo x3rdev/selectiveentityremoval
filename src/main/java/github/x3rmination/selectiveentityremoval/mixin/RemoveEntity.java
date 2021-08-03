@@ -52,8 +52,6 @@ public class RemoveEntity {
         //isEnabled changed to isVisible for clarity, if the entity is Disabled it will never be visible,
         //if entity is Enabled it will be visible as long as it is within range
 
-        System.out.println("entity " + targetEntity);
-
         boolean isVisible = configProvider.getEnabledFor(targetEntity);
         if (isVisible) {
             double range = configProvider.getRangeFor(targetEntity);

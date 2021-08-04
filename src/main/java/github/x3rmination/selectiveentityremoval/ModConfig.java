@@ -35,6 +35,9 @@ public class ModConfig extends PartitioningSerializer.GlobalData {
         ConfEntity arrow = new ConfEntity(true, 60);
 
         @ConfigEntry.Gui.CollapsibleObject
+        ConfEntity axolotl = new ConfEntity(true, 60);
+
+        @ConfigEntry.Gui.CollapsibleObject
         ConfEntity bat = new ConfEntity(true, 60);
 
         @ConfigEntry.Gui.CollapsibleObject
@@ -144,6 +147,12 @@ public class ModConfig extends PartitioningSerializer.GlobalData {
 
         @ConfigEntry.Gui.CollapsibleObject
         ConfEntity giant = new ConfEntity(true, 60);
+
+        @ConfigEntry.Gui.CollapsibleObject
+        ConfEntity glow_squid = new ConfEntity(true, 60);
+
+        @ConfigEntry.Gui.CollapsibleObject
+        ConfEntity goat = new ConfEntity(true, 60);
 
         @ConfigEntry.Gui.CollapsibleObject
         ConfEntity guardian = new ConfEntity(true, 60);

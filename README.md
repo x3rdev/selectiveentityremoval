@@ -12,8 +12,6 @@ https://www.curseforge.com/minecraft/mc-mods/selective-entity-removal-fabric
 ## Dependencies
 
 This mod requires:
-* Cloth Config Fabric --- Version: 4.11.19+
-    * Download available at: https://www.curseforge.com/minecraft/mc-mods/cloth-config
 * Mod Menu --- Version: 1.16.9+ 
     * Download available at: https://www.curseforge.com/minecraft/mc-mods/modmenu
     

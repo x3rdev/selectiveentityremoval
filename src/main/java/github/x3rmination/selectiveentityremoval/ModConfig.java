@@ -23,8 +23,6 @@ public class ModConfig extends PartitioningSerializer.GlobalData {
     @Config(name = "entities")
     public static class GeneralConfig implements ConfigData {
 
-
-
         @ConfigEntry.Gui.CollapsibleObject
         ConfEntity area_affect_cloud = new ConfEntity(true, 60);
 

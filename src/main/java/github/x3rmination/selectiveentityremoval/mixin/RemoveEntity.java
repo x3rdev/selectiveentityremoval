@@ -2,21 +2,14 @@ package github.x3rmination.selectiveentityremoval.mixin;
 
 import github.x3rmination.selectiveentityremoval.ConfigProvider;
 import github.x3rmination.selectiveentityremoval.ModConfig;
-import github.x3rmination.selectiveentityremoval.SelectiveEntityRemoval;
 import me.shedaniel.autoconfig.AutoConfig;
-import net.fabricmc.loader.api.FabricLoader;
-import net.fabricmc.loader.game.MinecraftGameProvider;
-import net.fabricmc.loom.configuration.providers.MinecraftProvider;
-import net.minecraft.MinecraftVersion;
 import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.MinecraftClientGame;
 import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.render.WorldRenderer;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
-
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -36,9 +29,7 @@ public class RemoveEntity {
         double entityXcoord = entity.getX();
         double entityZcoord = entity.getZ();
 
-        double distance = Math.round((Math.sqrt(Math.pow((playerXcoord - entityXcoord), 2) + Math.pow((playerZcoord - entityZcoord), 2))) * 10000.0) / 10000.0;
-
-        return distance;
+        return Math.round((Math.sqrt(Math.pow((playerXcoord - entityXcoord), 2) + Math.pow((playerZcoord - entityZcoord), 2))) * 10000.0) / 10000.0;
 
     }
 

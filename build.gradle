@@ -1,7 +1,10 @@
 plugins {
-	id 'fabric-loom' version '0.8-SNAPSHOT'
+	id 'fabric-loom' version '0.10-SNAPSHOT'
 	id 'maven-publish'
 }
+
+sourceCompatibility = JavaVersion.VERSION_17
+targetCompatibility = JavaVersion.VERSION_17
 
 archivesBaseName = project.archives_base_name
 version = project.mod_version
@@ -20,14 +23,14 @@ repositories {
 }
 
 dependencies {
-	minecraft "com.mojang:minecraft:1.17.1"
-	mappings "net.fabricmc:yarn:1.17.1+build.32:v2"
-	modImplementation "net.fabricmc:fabric-loader:0.11.6"
-	modImplementation "com.terraformersmc:modmenu:2.0.4"
-	modApi("me.shedaniel.cloth:cloth-config-fabric:5.0.37") {
+	minecraft "com.mojang:minecraft:1.18"
+	mappings "net.fabricmc:yarn:1.18+build.1:v2"
+	modImplementation "net.fabricmc:fabric-loader:0.12.8"
+	modImplementation "com.terraformersmc:modmenu:3.0.0"
+	modApi("me.shedaniel.cloth:cloth-config-fabric:6.0.42") {
 		exclude(group: "net.fabricmc.fabric-api")
 	}
-	include "me.shedaniel.cloth:cloth-config-fabric:5.0.37"
+	include "me.shedaniel.cloth:cloth-config-fabric:6.0.42"
 
 }
 
@@ -49,10 +52,7 @@ tasks.withType(JavaCompile).configureEach {
 	// The Minecraft launcher currently installs Java 8 for users, so your mod probably wants to target Java 8 too
 	// JDK 9 introduced a new way of specifying this that will make sure no newer classes or methods are used.
 	// We'll use that if it's available, but otherwise we'll use the older option.
-	def targetVersion = 8
-	if (JavaVersion.current().isJava9Compatible()) {
-		 it.options.release = targetVersion
-	}
+	it.options.release = 17
 }
 
 java {

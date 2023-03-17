@@ -1,4 +1,4 @@
-package github.x3rmination.selectiveentityremoval;
+package com.github.x3rmination.selectiveentityremoval;
 
 import me.shedaniel.clothconfig2.api.ConfigBuilder;
 import me.shedaniel.clothconfig2.api.ConfigCategory;

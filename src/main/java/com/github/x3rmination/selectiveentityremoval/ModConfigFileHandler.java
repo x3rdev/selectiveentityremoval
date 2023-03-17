@@ -1,4 +1,4 @@
-package github.x3rmination.selectiveentityremoval;
+package com.github.x3rmination.selectiveentityremoval;
 
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
@@ -10,8 +10,6 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Map;
-import java.util.Properties;
-import java.util.logging.Logger;
 
 public class ModConfigFileHandler {
     public static void readFromConfig() {

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "selectiveentityremoval",
-  "version": "2.1.19",
+  "version": "${version}",
   "name": "Selective Entity Removal",
   "description": "Selective Entity Removal allows the user to disable specific mobs from rendering and set the range at which they are visible.\n\nSelective Entity Removal is currently for Fabric 1.16.4+ and will be updated in the future.\n\nThis mod is not perfect so if you encounter any issues please report them on the github page.",
   "authors": [
@@ -17,19 +17,20 @@
   "environment": "client",
   "entrypoints": {
     "client": [
-      "github.x3rmination.selectiveentityremoval.SelectiveEntityRemoval"
+      "com.github.x3rmination.selectiveentityremoval.SelectiveEntityRemoval"
     ],
     "modmenu": [
-      "github.x3rmination.selectiveentityremoval.ModMenuIntegration"
+      "com.github.x3rmination.selectiveentityremoval.ModMenuIntegration"
     ]
   },
   "mixins": [
     "selectiveentityremoval.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.14.8",
-    "minecraft": "1.19.x",
-    "modmenu": ">=4.0.4",
-    "cloth-config": ">=7.0.73"
+    "fabricloader": ">=0.14.17",
+    "minecraft": "~1.19.4",
+    "modmenu": ">=5.0.2",
+    "cloth-config": ">=7.0.73",
+    "java": ">=17"
   }
 }

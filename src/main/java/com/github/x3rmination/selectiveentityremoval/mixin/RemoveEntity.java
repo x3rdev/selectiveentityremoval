@@ -1,7 +1,6 @@
-package github.x3rmination.selectiveentityremoval.mixin;
+package com.github.x3rmination.selectiveentityremoval.mixin;
 
-import github.x3rmination.selectiveentityremoval.ModConfig;
-import me.shedaniel.autoconfig.AutoConfig;
+import com.github.x3rmination.selectiveentityremoval.ModConfig;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.client.render.VertexConsumerProvider;
@@ -15,8 +14,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(value = WorldRenderer.class, priority = 2000)
 public abstract class RemoveEntity {
-
-//    ConfigProvider configProvider = new ConfigProvider(AutoConfig.getConfigHolder(ModConfig.class).getConfig());
 
     @Inject(at = @At("HEAD"), method = "renderEntity", cancellable = true)
     private void renderEntity(Entity entity, double cameraX, double cameraY, double cameraZ, float tickDelta,
